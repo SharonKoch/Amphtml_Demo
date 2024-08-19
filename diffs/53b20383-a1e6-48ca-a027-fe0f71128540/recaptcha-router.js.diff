@@ -1,7 +1,7 @@
 --- original
 +++ remediated
 @@ -1,0 +1,1 @@
-+const path = require('path');
++const path = require('path')
  const argv = require('minimist')(process.argv.slice(2));
  const cors = require('./amp-cors');
  const pc = process;
