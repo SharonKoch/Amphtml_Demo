@@ -1599,14 +1599,14 @@
  
      const max = serveMode === 'default' ? '.max' : '';
      const localPath = `${pc.cwd()}/dist/v0/analytics-vendors/${vendor}${max}.json`;
- 
-@@ -1600,0 +1600,6 @@
+@@ -1599,0 +1599,6 @@
 +      const resolvedPath = path.resolve(localPath);
-+      const expectedDir = path.resolve(process.cwd(), 'dist/v0/analytics-vendors');
++      const expectedDir = path.resolve(pc.cwd(), 'dist/v0/analytics-vendors');
 +      if (!resolvedPath.startsWith(expectedDir)) {
 +        res.status(400).end('Invalid path');
 +        return;
 +      }
+ 
      try {
        const file = await fs.promises.readFile(localPath);
        res.setHeader('Content-Type', 'application/json');
