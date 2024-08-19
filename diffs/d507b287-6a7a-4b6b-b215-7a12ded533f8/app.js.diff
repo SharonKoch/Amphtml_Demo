@@ -1,7 +1,7 @@
 --- original
 +++ remediated
 @@ -1,0 +1,1 @@
-+const escape = require('escape-html');
++var escape = require('escape-html');
  'use strict';
  
  /**
@@ -934,9 +934,7 @@
      })
      .catch(() => {
        res.status(404);
-@@ -931,1 +932,1 @@
--      res.end('Not found: ' + filePath);
-+        res.end('Not found: ' + escape(filePath));
+       res.end('Not found: ' + filePath);
      });
  });
  
