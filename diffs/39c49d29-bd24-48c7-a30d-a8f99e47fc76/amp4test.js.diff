@@ -65,20 +65,27 @@
  
  app.use('/compose-html', function (req, res) {
    res.setHeader('X-XSS-Protection', '0');
-   res.send(`
+@@ -64,1 +65,1 @@
+-  res.send(`
++    res.send(`
  <!doctype html>
  <html>
  <head>
-   <title>NON-AMP TEST</title>
-   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+@@ -68,2 +69,2 @@
+-  <title>NON-AMP TEST</title>
+-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
++<title>NON-AMP TEST</title>
++<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
  </head>
  <body>
 @@ -72,1 +73,1 @@
 -${req.query.body}
-+    ${escape(req.query.body)}
++${escape(req.query.body)}
  </body>
  </html>
-   `);
+@@ -75,1 +76,1 @@
+-  `);
++`);
  });
  
  app.use('/compose-shadow', function (req, res) {
