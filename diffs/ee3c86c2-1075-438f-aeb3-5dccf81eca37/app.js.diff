@@ -1,6 +1,4 @@
---- original
-+++ remediated
-@@ -0,0 +0,0 @@
++const path = require('path')
  'use strict';
  
  /**
@@ -1005,7 +1003,6 @@
      const stream = Number(req.query['stream']);
      const componentVersion = req.query['componentVersion'];
      const urlPrefix = getUrlPrefix(req);
-@@ -1005,0 +1005,5 @@
 +      const resolvedPath = path.resolve(pc.cwd(), filePath);
 +      const expectedDir = path.resolve(pc.cwd()); // TODO: Change this to your expected directory
 +      if (!resolvedPath.startsWith(expectedDir)) {
