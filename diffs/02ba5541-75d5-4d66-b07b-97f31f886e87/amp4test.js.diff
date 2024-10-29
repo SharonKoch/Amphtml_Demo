@@ -1,6 +1,3 @@
---- original
-+++ remediated
-@@ -1,0 +1,1 @@
 +const escape = require('escape-html');
  'use strict';
  
@@ -129,7 +126,6 @@
    if (typeof result === 'function') {
      return res
        .status(500)
-@@ -128,1 +129,1 @@
 -      .send(`another client is withdrawing this ID [${key}]`);
 +        .send(`another client is withdrawing this ID [${escape(key)}]`);
    }
@@ -137,7 +133,6 @@
      if (result === undefined) {
        // This happens when tearDown is called but no request
        // of given ID has been received yet.
-@@ -134,1 +135,1 @@
 -      res.status(404).send(`Request of given ID not found: [${key}]`);
 +        res.status(404).send(`Request of given ID not found: [${escape(key)}]`);
      } else {
