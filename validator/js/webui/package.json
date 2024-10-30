@@ -47,6 +47,6 @@
     "codemirror": "5.58.2",
     "vulcanize": "1.14.12",
     "webcomponents.js": "0.7.22",
-    "web-animations-js": "2.2.2"
+    "web-animations-js": "2.3.2"
   }
 }
